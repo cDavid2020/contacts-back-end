@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 
 const CONTACTS = [
   { id: 1, name: "John" },
@@ -42,12 +42,29 @@ otherwise, send back the found contact w a 200 status code
 300 means the resource was found
 */
 
+/*
 if (!contact) {
   response.status(404).json({ message: "Contact not found" });
 }
+*/
 
 app.put("/api/contacts/:id", (request, response) => {
   // Id that needs to be updated
   const { id } = request.params;
   const updatedContact = request.body; // find the contact that needs to be udpated
 });
+
+// use map to update the contact
+// use map to iterate over the array. if it matches the map re
+// if the contact I'd matches the I'd in the request, params, update it
+// otherwise, return the original contact
+
+const updatedContacts = CONTACTS.map((contact) => {
+  if (contact.id === Number(id)) {
+    return updatedContact;
+  }
+
+  return contact;
+});
+
+response.json(updatedContact); // send back the updated contact
