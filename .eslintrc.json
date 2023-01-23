@@ -16,10 +16,10 @@
     "array-callback-return": "warn",
     "capitalized-comments": "off",
     "new-cap": "off",
-    "no-console":[
+    "no-console": [
       "warn",
       {
-               "allow": ["error", "info", "table", "warn"]
+        "allow": ["error", "info", "table", "warn"]
       }
     ],
     "padding-line-between-statements": "warn",
