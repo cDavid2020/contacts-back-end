@@ -3,19 +3,23 @@
 import mongoose from "mongoose";
 import config from "../config.js";
 
-// COnne to the database.
+// Connect to the database.
 
 // setting up config and controller and the Express server. Check to see the message. "connected to the databas"
 
 mongoose
-  .connect(config.getDbCon("contacts"))
+  .connect(config.getDbCon("contacts")) //
   .then(() => {
-    console.log("Connected to the database");
+    console.info("Connected to the database");
   })
   .catch((err) => {
-    console.log("Error connecting to the database", err);
+    console.error("Error connecting to the database", err);
   });
 
 export default {
   // TODO: Get all Contacts
 };
+
+// controller is controlling access to the database/data. Mongoose is the external module (mediator, middleperson) that we use to interact w MongoDB. Mongoose is used to interface w/ MongoDB
+
+// it needs the connection string to connect to the database from Warp
