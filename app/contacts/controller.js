@@ -23,3 +23,5 @@ export default {
 // controller is controlling access to the database/data. Mongoose is the external module (mediator, middleperson) that we use to interact w MongoDB. Mongoose is used to interface w/ MongoDB
 
 // it needs the connection string to connect to the database from Warp
+
+// before we were printing the whole error object ERR. now we are just printing the error message
