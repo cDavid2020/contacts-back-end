@@ -2,6 +2,7 @@
 
 import mongoose from "mongoose";
 import config from "../config.js";
+import Contacts from "./Contacts.js";
 
 // Connect to the database.
 
@@ -13,12 +14,18 @@ mongoose
     console.info("Connected to the database");
   })
   .catch((err) => {
-    console.error("Error connecting to the database", err);
+    console.error("Error connecting to the database", err.message);
   });
 
 export default {
   // TODO: Get all Contacts
 };
+
+Contacts.updateMany({}, { $unset: { id: "" }, multi: true });
+.then ((output) => {
+
+})
+
 
 // controller is controlling access to the database/data. Mongoose is the external module (mediator, middleperson) that we use to interact w MongoDB. Mongoose is used to interface w/ MongoDB
 
